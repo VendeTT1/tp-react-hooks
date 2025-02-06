@@ -52,11 +52,17 @@ Pour chaque exercice :
 - [ ] 1.3 Documenter votre solution ici
 
 _Votre réponse pour l'exercice 1 :_
-```
 Expliquez votre solution ici
+La solution adaptée dans cet exercice et comme suit : 
+   <ul><li>Création du hook useDebounce</li></ul> 
+   <p>Ce hook va nous permettre d'effectuer la recherche après un certain délai.
+Le concept utilisé est le<b> State Lifting</b>, qui consiste à déplacer l'état d'un composant enfant vers un composant parent pour mieux gérer les données et la communication entre plusieurs composants.
+Dans notre cas, nous avons les composants fils <b>ProductSearch</b> pour la recherche des produits et <b>ProductList</b> pour l'affichage des produits recherchés.
+   </p>
 [Ajoutez vos captures d'écran]
-```
-
+<img src="./capture-ecran/1.png">
+<img src="./capture-ecran/2.png">
+<img src="./capture-ecran/3.png">
 ### Exercice 2 : Context et Internationalisation
 #### Objectif : Gérer les préférences de langue
 
