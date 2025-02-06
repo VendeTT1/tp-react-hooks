@@ -25,7 +25,7 @@ const useProductSearch = () => {
     };
 
     fetchProducts();
-  }, []); // TODO: Exercice 4.2 - Ajouter les dépendances pour la pagination
+  } ); // TODO: Exercice 4.2 - Ajouter les dépendances pour la pagination
 
   // TODO: Exercice 4.1 - Ajouter la fonction de rechargement
   // TODO: Exercice 4.2 - Ajouter les fonctions pour la pagination

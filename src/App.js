@@ -2,15 +2,17 @@ import React, { createContext, useState } from 'react';
 import ProductList from './components/ProductList';
 import ProductSearch from './components/ProductSearch';
 import ThemeToggle from './components/ThemeToggle';
+import useDebounce from './hooks/useDebounce';
 
 // TODO: Exercice 2.1 - Créer le LanguageContext
-
 export const ThemeContext = createContext();
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   // TODO: Exercice 2.2 - Ajouter l'état pour la langue
 
+  const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchTerm = useDebounce(searchTerm, 1000);
   return (
     <ThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>
       {/* TODO: Exercice 2.1 - Wrapper avec LanguageContext.Provider */}
@@ -23,8 +25,8 @@ const App = () => {
           </div>
         </header>
         <main>
-          <ProductSearch />
-          <ProductList />
+          <ProductSearch setSearchTerm={setSearchTerm}/>
+          <ProductList filtringTherm={debouncedSearchTerm}/>
         </main>
       </div>
     </ThemeContext.Provider>
