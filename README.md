@@ -47,61 +47,46 @@ Pour chaque exercice :
 ### Exercice 1 : État et Effets 
 #### Objectif : Implémenter une recherche en temps réel
 
-- [ ] 1.1 Modifier le composant ProductSearch pour utiliser la recherche
-- [ ] 1.2 Implémenter le debounce sur la recherche
-- [ ] 1.3 Documenter votre solution ici
+<img src = "./src/image/1.png"/>
 
-_Votre réponse pour l'exercice 1 :_
-Expliquez votre solution ici
-La solution adaptée dans cet exercice et comme suit : 
-   <ul><li>Création du hook useDebounce</li></ul> 
-   <p>Ce hook va nous permettre d'effectuer la recherche après un certain délai.
-Le concept utilisé est le<b> State Lifting</b>, qui consiste à déplacer l'état d'un composant enfant vers un composant parent pour mieux gérer les données et la communication entre plusieurs composants.
-Dans notre cas, nous avons les composants fils <b>ProductSearch</b> pour la recherche des produits et <b>ProductList</b> pour l'affichage des produits recherchés.
-   </p>
-[Ajoutez vos captures d'écran]
-<img src="./capture-ecran/1.png">
-<img src="./capture-ecran/2.png">
-<img src="./capture-ecran/3.png">
 ### Exercice 2 : Context et Internationalisation
 #### Objectif : Gérer les préférences de langue
 
-- [ ] 2.1 Créer le LanguageContext
-- [ ] 2.2 Ajouter le sélecteur de langue
-- [ ] 2.3 Documenter votre solution ici
+Je crée d'abord le composant langageSelectore qui va me servir à choisir la langue 
 
-_Votre réponse pour l'exercice 2 :_
-```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
-```
+<img src = "./src/image/2.png"/>
+<hr>
+Je crée le laguageContext
+
+<img src = "./src/image/3.png"/>
+<hr>
+J'enveloppe mon application avec les balises languageContext.Provider pour fournir le choix de la langue surant la navigation de l'application
+<img src = "./src/image/4.png"/>
+
+
+
 
 ### Exercice 3 : Hooks Personnalisés
 #### Objectif : Créer des hooks réutilisables
-
-- [ ] 3.1 Créer le hook useDebounce
-- [ ] 3.2 Créer le hook useLocalStorage
-- [ ] 3.3 Documenter votre solution ici
-
-_Votre réponse pour l'exercice 3 :_
-```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
-```
+La création du hook useDebounce:
+<img src = "./src/image/5.png"/>
+<hr>
+La création du hook useLocalStorage:
+<img src = "./src/image/6.png"/>
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
 #### Objectif : Gérer le chargement et la pagination
-
-- [ ] 4.1 Ajouter le bouton de rechargement
-- [ ] 4.2 Implémenter la pagination
-- [ ] 4.3 Documenter votre solution ici
-
-_Votre réponse pour l'exercice 4 :_
-```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
-```
-
+<ul>
+<li>État de la page : Le state page est utilisé pour suivre la page courante.</li>
+<li>Limite des résultats : Une limite de 6 produits par page est définie.</li>
+<li>Calcul du skip : Le nombre de produits à ignorer est calculé par skip = (page - 1) * limit pour récupérer la bonne tranche de résultats.</li>
+<li>Récupération des produits : L'API est appelée avec des paramètres skip et limit pour récupérer les produits de la page courante.</li>
+<li>Gestion de la pagination :</li>
+<li>nextPage : Incrémente la page si elle n'est pas la dernière.</li>
+<li>previousPage : Décrémente la page si elle n'est pas la première.</li>
+<li>Total des pages : Le nombre total de pages est calculé à partir du nombre total de produits retournés par l'API.</li>
+</ul>
+<img src = "./src/image/7.png"/>
 ## Rendu
 
 - Ajoutez l'URL de votre dépôt Github dans  **Classroom** et envoyer la réponse dès le démarage de votre projet.
